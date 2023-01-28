@@ -13,7 +13,7 @@ def weight_prediction():
         print(dict(request.form))
         weight_features = dict(request.form).values()
         weight_features = np.array([float(x) for x in weight_features])
-        model = joblib.load("model-development/weight&height-prediction-using-linear-regression.pkl")
+        model = joblib.load("weight-prediction.pkl")
         weight_features = [weight_features]
         print(weight_features)
         result = model.predict(weight_features)
