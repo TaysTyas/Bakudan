@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta  charset="UTF-8">
+	<meta http-e="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Weight Prediction | Yosua Chrisarga Manuntun Marpaung</title>
+    <style type="text/css">
+        .bg{
+            background: #101010;
+        }
+        .pertama {
+            color: white;
+            font-size: 30px;
+        }
+        .kedua{
+            color: white;
+            font-size : 20px;  
+        }
+    </style>
+	</head>
+<body class="bg">
+	<center><font class = "pertama">Technical Task: Weight Prediction with Linear Regression</font></center><br>
+	<font class="kedua"> Name : Yosua Chrisarga Manuntun Marpaung</font><br/>
+	<font class="kedua" > Class : Better</font>
+	<div class="bg-red-300 min-h-screen pt-2 font-mono my-16">
+        <div class="container flex mx-auto">
+            <div class="inputs w-full max-w-2xl p-6">
+                <h2 class="text-2xl text-gray-900">Klasifikasi Berat Badan</h2>
+                <form class="mt-6 border-t border-black pt-4" method="POST" action="">
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full md:w-full px-3 mb-6">
+                            <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="grid-text-3">Jenis Kelamin (Laki-Laki = 1 dan Perempuan = 0)</label>
+                            <input type="text" class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500" id="grid-text-3" placeholder="Masukkan jenis kelamin" name="sepal_length" required="">
+                        </div>
+                        <div class="w-full md:w-full px-3 mb-6">
+                            <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="grid-text-4">Masukkan tinggi badan</label>
+                            <input type="text" class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500" id="grid-text-4" placeholder="Masukkan tinggi badan (Inch)" name="sepal_width" required="">
+                        </div>
+                    </div>
+                    <div class="flex justify-end ">
+                        <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md hover:bg-gray-300" type="submit">Prediksi</button>
+                    </div>
+            </form></div>
+            
+            {% if result is defined %}
+            <div class="prediction-result w-full max-w-2xl p-6">
+                <h2 class="text-2xl text-gray-900">Hasil Klasifikasi Berat Badan</h2>
+                <img class="my-3" src="static/img/timbangan.jpg" alt="image">
+                <h2 class="mx-auto text-3xl text-center px-2 py-2 bg-gray-300 rounded rounded-full mt-5">{{result}}</h2>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
